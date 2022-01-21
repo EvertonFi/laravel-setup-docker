@@ -76,3 +76,27 @@ php artisan key:generate
 
 Acesse o projeto
 [http://localhost:8180](http://localhost:8180)
+
+Criar Container MySQL no Docker
+```sh
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:latest
+```
+
+Para entrar no terminal do MySQL
+```sh
+docker exec -it mysql bash
+mysql --user=root --password=root
+```
+
+Baixar imagem do PHPMyAdmin
+```sh
+docker pull phpmyadmin/phpmyadmin:latest
+```
+
+Criar Container PHPMyAdmin no Docker
+```sh
+docker run --name phpmyadmin -d --link mysql:db -p 8081:80 phpmyadmin/phpmyadmin
+```
+
+Acesse o PHPMyAdmin
+[http://localhost:8081](http://localhost:8081)
