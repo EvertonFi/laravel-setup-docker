@@ -79,13 +79,13 @@ Acesse o projeto
 
 Criar Container MySQL no Docker
 ```sh
-docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:latest
+docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:latest
 ```
 
 Para entrar no terminal do MySQL
 ```sh
 docker exec -it mysql bash
-mysql --user=root --password=root
+# mysql --user=root --password=root
 ```
 
 Baixar imagem do PHPMyAdmin
